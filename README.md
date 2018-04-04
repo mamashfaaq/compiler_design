@@ -4,7 +4,7 @@
 1. compile the lex file: *flex filename.l*
 2. compile the yacc file: *yacc -d filename.y*
 3. compile c++ programs: *g++ lex.yy.c filename.tab.c -lfl*
-4. execute the file: *./a.out*
+4. execute the file: *./a.out<inp.txt*
 
 **CONCEPTS INCLUDED**
 * convert unmatched if to matched if.
