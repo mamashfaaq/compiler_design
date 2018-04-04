@@ -316,16 +316,16 @@ void dfsDAG(dagNode *curr,string tab="\t")
 	}	
 	for(ll i=0;i<curr->children.size();i++)
 	{
-		cout<<tab<<"child "<<(i+1)<<":"<<endl;
+		cout<<tab<<"CHILD "<<(i+1)<<":"<<endl;
 		dfsDAG(curr->children[i],tab+"\t");
 	}
 }
 void displayDAG()
 {
-	cout<<"DAG:"<<endl;
+	cout<<"---------------DAG:---------------"<<endl;
 	for(ll i=0;i<dagBlock.size();i++)
 	{
-		cout<<"Block "<<i<<":"<<endl;
+		cout<<"BLOCK "<<i<<":"<<endl;
 		for(ll j=0;j<dagBlock[i].size();j++)
 		{
 			dfsDAG(dagBlock[i][j]);
@@ -582,7 +582,7 @@ void genFlowGraph()
 }
 void displayFlowGraph()
 {
-	cout<<"Flow Graph:"<<endl;
+	cout<<"---------------FLOW GRAPH:---------------"<<endl;
 	for(ll i=0;i<bbgraph.size();i++)
 	{
 		cout<<i<<": ";
@@ -622,7 +622,7 @@ void findLeaders()
 }
 void displayLeaders()
 {
-	cout<<"Leaders:"<<endl;
+	cout<<"---------------LEADERS:---------------"<<endl;
 	for(set<ll>::iterator it=leaders.begin();it!=leaders.end();it++)
 	{
 		cout<<*it<<endl;
@@ -659,10 +659,10 @@ void genBasicBlock()
 }
 void displayBasicBlocks()
 {
-	cout<<"Basic Blocks:"<<endl;
+	cout<<"---------------BASIC BLOCKS:---------------"<<endl;
 	for(map<ll,vector<string> >::iterator it=basicBlock.begin();it!=basicBlock.end();it++)
 	{
-		cout<<"Block "<<it->first<<":"<<endl;
+		cout<<"BLOCK "<<it->first<<":"<<endl;
 		for(ll i=0;i<it->second.size();i++)
 		{
 			cout<<"\t"<<it->second[i]<<endl;
@@ -672,7 +672,7 @@ void displayBasicBlocks()
 }
 void displayInst()
 {
-	cout<<"Three Address Statements:"<<endl;
+	cout<<"---------------THREE ADDRESS STATEMENTS:---------------"<<endl;
 	for(map<ll,string>::iterator it=instList.begin();it!=instList.end();it++)
 	{
 		cout<<it->first<<" "<<it->second<<endl;
@@ -754,10 +754,10 @@ ll getWidth(pair<string,vector<ll> > type)
 }
 void printTable()
 {
-	cout<<"Symbol Table:"<<endl;
+	cout<<"---------------SYMBOL TABLE:---------------"<<endl;
 	for(map<ll,map<string,pair<pair<string,vector<ll> >,string> > >::iterator it=table.begin();it!=table.end();it++)
 	{
-		cout<<"Block "<<it->first<<":"<<endl;
+		cout<<"BLOCK "<<it->first<<":"<<endl;
 		for(map<string,pair<pair<string,vector<ll> >,string> >::iterator it2=it->second.begin();it2!=it->second.end();it2++)
 		{
 			cout<<it2->first<<" "<<it2->second.first.first<<" "<<it2->second.second;
